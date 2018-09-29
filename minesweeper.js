@@ -109,12 +109,7 @@ function startGame () {
 
       for (i = 0; i <= 8; i ++) { 
         var cell = board.cells[i]
-        countSurroundingMines(cell)
-
-        // console.log(i, " i value after loop") //loop works 
-        console.log("properties cell: ", cell, "cell index: ", i) /*  */
-        
-      
+        board.cells[i].surroundingMines = countSurroundingMines(board.cells[i])
       }
 
 
@@ -149,19 +144,16 @@ function countSurroundingMines (cell) {
   console.log("countSurroundingMines called")
 
   var surroundingCells = lib.getSurroundingCells(cell['row'], cell['col'])
+  var count=0
   console.log("Surrounding is: ", surroundingCells) 
   
-    for (count = 0; surroundingCells == (cell['isMine'][true]) ; count++) {
-
-
-      console.log('count value', count)
-      console.log('surrounding value', surroundingCells.length )
-      // cell['surroundingMines'] = surroundingCells
+    for (var k = 0; surroundingCells == (surroundingCells.length); k++) {
+      if (surroundingCells[k]['isMine']=== true ){
+        count++
+      }
       return count
     }
- 
-  // console.log(cell)
-  // console.log("surrounding is", surroundingCells)
+
 
 }
 
