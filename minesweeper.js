@@ -127,8 +127,8 @@ var board = {
  
 
 function startGame () {
-      for (var i = 0; i < board.cells.length; i++) { 
-        board.cells[i].surroundingMines = countSurroundingMines(board.cells[i])
+      for (var q = 0; q < board.cells.length; q++) { 
+        board.cells[q].surroundingMines = countSurroundingMines(board.cells[q])
       }
     document.addEventListener("click", checkForWin);
     document.addEventListener("auxclick", checkForWin);
@@ -188,7 +188,8 @@ function countSurroundingMines (cell) {
         count++
 
       } 
-      return count
     }
+    return count
+
 };
 
