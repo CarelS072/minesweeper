@@ -142,8 +142,11 @@ function startGame () {
 
 
 function checkForWin () {
+  var audioWin = new Audio('sounds/crowdcheering.wav');
+
 
   for (var i = 0; i < board.cells.length; i++) {
+    
     if (board.cells[i].isMine === false && board.cells[i].hidden === true) {
       return
       }
@@ -151,11 +154,11 @@ function checkForWin () {
       return
       }
     }
-
-
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
- lib.displayMessage('You win!');
+  
+  lib.displayMessage('You win!')
+  audioWin.play();
 
 
     //   if (board.cells[i].isMarked == true && board.cells[i].hidden == true) {
@@ -181,15 +184,20 @@ function checkForWin () {
 function countSurroundingMines (cell) {
   console.log("countSurroundingMines called")
   var surrounding = lib.getSurroundingCells(cell.row, cell.col)
-  var count=0
+  var count = 0
   
     for (var k = 0; k < surrounding.length; k++) {
       if (surrounding[k].isMine === true ){
         count++
-
       } 
     }
     return count
 
 };
+
+// resetting the game
+function reset() {
+  location.reload();
+}
+
 
