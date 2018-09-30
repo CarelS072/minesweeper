@@ -11,7 +11,7 @@ var board = {
                     {
                     row: 0, 
                     col: 1, 
-                    isMine:true  , 
+                    isMine:true, 
                     hidden:true,
                     isMarked: false
                     }, 
@@ -53,12 +53,12 @@ var board = {
                     isMarked: false
                     },
                     {
-                    row: 1,
-                    col: 3, 
-                    isMine:false, 
-                    hidden:true,
-                    isMarked: false
-                    },
+                      row: 1,
+                      col: 3, 
+                      isMine:true, 
+                      hidden:true,
+                      isMarked: false
+                      },
                     {
                     row: 2,
                     col: 0, 
@@ -139,17 +139,32 @@ function startGame () {
 //
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
-function checkForWin () {
-  // for (i = 0; i < board.cells.length; i ++){
-  //   if (board.cells[i['isMine']]===true && board.cells[i['isMarked']]===false){
-  //     return
-  //   }
-  //   else if (board.cells[i['isMine']]===true && board.cells[i['hidden']]===true) {
-  //     return
-  //   }
-  //   lib.displayMessage('You win!')
 
-  // }
+
+function checkForWin () {
+
+  for (var i = 0; i < board.cells.length; i++) {
+    if (board.cells[i].isMine === false && board.cells[i].hidden === true) {
+      return
+      }
+    if (board.cells[i].isMine === true && board.cells[i].isMarked === false) {
+      return
+      }
+    }
+
+
+  // You can use this function call to declare a winner (once you've
+  // detected that they've won, that is!)
+ lib.displayMessage('You win!');
+
+
+    //   if (board.cells[i].isMarked == true && board.cells[i].hidden == true) {
+    //   console.log("Checkforwin - not won yet : There are still hidden cells")
+    //   [lib.displayMessage('There are still some cells left!')];
+    //   return
+    // }
+
+  
 
 };
 
