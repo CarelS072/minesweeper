@@ -1,122 +1,134 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
-var board = {
-          cells: [ {
-                    row: 0,
-                    col: 0,  
-                    isMine:false, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 0, 
-                    col: 1, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    }, 
-                    
-                    { 
-                    row: 0,
-                    col: 2, 
-                    isMine:false, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 0,
-                    col: 3, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 1, 
-                    col: 0, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    },
+var board = genBoard(6)
 
-                    {
-                    row: 1,
-                    col: 1, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 1,
-                    col: 2, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                      row: 1,
-                      col: 3, 
-                      isMine:true, 
-                      hidden:true,
-                      isMarked: false
-                      },
-                    {
-                    row: 2,
-                    col: 0, 
-                    isMine:false, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 2,
-                    col: 1, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 2,
-                    col: 2, 
-                    isMine:false, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 2,
-                    col: 3, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 3,
-                    col: 0, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 3,
-                    col: 1, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 3,
-                    col: 2, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    },
-                    {
-                    row: 3,
-                    col: 3, 
-                    isMine:true, 
-                    hidden:true,
-                    isMarked: false
-                    }    ]
+function genBoard(size) {
+    var board = {
+          cells: [ 
+            
+            // {
+            //         row: 0,
+            //         col: 0,  
+            //         isMine:false, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 0, 
+            //         col: 1, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         }, 
+                    
+            //         { 
+            //         row: 0,
+            //         col: 2, 
+            //         isMine:false, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 0,
+            //         col: 3, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 1, 
+            //         col: 0, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+
+            //         {
+            //         row: 1,
+            //         col: 1, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 1,
+            //         col: 2, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //           row: 1,
+            //           col: 3, 
+            //           isMine:true, 
+            //           hidden:true,
+            //           isMarked: false
+            //           },
+            //         {
+            //         row: 2,
+            //         col: 0, 
+            //         isMine:false, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 2,
+            //         col: 1, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 2,
+            //         col: 2, 
+            //         isMine:false, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 2,
+            //         col: 3, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 3,
+            //         col: 0, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 3,
+            //         col: 1, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 3,
+            //         col: 2, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         },
+            //         {
+            //         row: 3,
+            //         col: 3, 
+            //         isMine:true, 
+            //         hidden:true,
+            //         isMarked: false
+            //         }    
+                  ]
         };
-  
+    for (var k = 0; k < size; k++) {
+      for (var l = 0; l < size; l++) {
+        board.cells.push({row:k, col:l, isMine:Math.random() < 0.3, isMarked:false, hidden:true})
+      }
+    }
+    return board;
+  }
   /*
   cells is an object property.
  You can access (get) a property on an object by using either dot notation (board.cells) or bracket notation (board['cells']).
@@ -196,8 +208,8 @@ function countSurroundingMines (cell) {
 };
 
 // resetting the game
-function reset() {
-  location.reload();
+  function reset() {
+    location.reload();
 }
 
 
